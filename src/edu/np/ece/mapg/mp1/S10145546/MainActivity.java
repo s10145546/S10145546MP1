@@ -32,15 +32,24 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				String str = etNumber.getText().toString();
-				int num = Integer.parseInt(str);
-				if (num!= myNumber ) {
-					Toast.makeText(MainActivity.this, "Try again",
-							Toast.LENGTH_SHORT).show();
-				} else {
-					Toast.makeText(MainActivity.this, "Bingo! Correct number",
-							Toast.LENGTH_SHORT).show();
+				try {
+					int num = Integer.parseInt(str);
 
+					if (num != myNumber) {
+						Toast.makeText(MainActivity.this, "Try again",
+								Toast.LENGTH_SHORT).show();
+					} else {
+						Toast.makeText(MainActivity.this,
+								"Bingo! Correct number", Toast.LENGTH_SHORT)
+								.show();
+					}
+				} catch (NumberFormatException e) {
+					System.out.println("Exception:" + e.getMessage());
+					Toast.makeText(MainActivity.this,
+							"Please Enter Numbers Only", Toast.LENGTH_SHORT)
+							.show();
 				}
+
 			}
 		});
 	}
