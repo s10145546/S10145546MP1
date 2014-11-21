@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	Button btGuess;
 	TextView textView;
 
+	// onCreate method
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
